@@ -52,7 +52,7 @@ async function loginUser(req,res){
 }
 async function sendHomePage(req,res){
     const token = jwt.decode(req.cookies.uid);
-    const url = `http://api.openweathermap.org/data/2.5/weather?appid=3148bfcc580f847f828c1524cff25c78&q=${token.city}`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?appid={API_KEY}&q=${token.city}`;
      await axios.get(url)
      .then((response)=>{
         const data = response.data;
@@ -73,7 +73,7 @@ async function sendHomePage(req,res){
 async function fetchData(req,res){
     const token = jwt.decode(req.cookies.uid);
     const city_name  = req.body.city_name.toLowerCase();
-    const url = `http://api.openweathermap.org/data/2.5/weather?appid=3148bfcc580f847f828c1524cff25c78&q=${city_name}`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?appid={API_KEY}&q=${city_name}`;
      await axios.get(url)
      .then((response)=>{
         const data = response.data;
