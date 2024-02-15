@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        #h1{
+            font-size: 60px;
+            font-weight: bolder;
+            font-style: italic;
+            display: flex;
+            justify-content: center;
+        }
+        #div1{
+            margin-left: 24%;
+            height: 400px;
+            width: 800px;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: burlywood;
+            border: 3px solid;
+            border-radius: 5ch;
+        }
+        #btn{
+            font-size: 30px;
+            background-color: rgb(210, 105, 30,0.7);
+            border-radius: 7px;
+            width: 10ch;
+            margin-left: 80%;
+        }
+        #div2{ 
+            height: 340px;
+            width:700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-size: 35px;
+        }
+        .inp{
+            font-size: 35px;
+            border: 2px solid;
+        }
+        #div3{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2%;
+            width: 14%;
+            margin-left: 40%;
+            font-size: 20px;
+        }
+        #back_btn {
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 30px;
+        background-color: darkgray;
+        border: 2px solid;
+        border-radius: 10px;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <form action="http://localhost:8000/" method="get">
+        <button type="submit" id="back_btn">Back</button>
+      </form>
+    <h1 id="h1">Login Page</h1>
+
+    <div id="div1">
+        <form action="http://localhost:8000/login" method="post">
+            <div id="div2">
+                <label for="email">Email : <input type="text" name="email" required id="email" class="inp"></label>
+                <label for="password">Password : <input type="password" name="password" required id="password" class="inp"></label>
+            </div>
+            <button type="submit" id="btn">Login</button>
+        </form>
+    </div>
+    <div id="div3">
+        Not yet Sign Up ?
+        <a href = "http://localhost:8000/signup">Signup</a>
+    </div>
+</body>
+</html>

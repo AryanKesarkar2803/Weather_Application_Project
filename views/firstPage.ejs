@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color:dodgerblue;
+        }
+        #h1{
+            font-size: 70px;
+            font-weight: bolder;
+            font-style: italic;
+            display: flex;
+            justify-content: center;
+            color:white;
+            
+        }
+        #maindiv{
+            margin-top: 14%;
+            display: flex;
+            justify-content: space-around;
+            width: 65%;
+        }
+        .btn{
+            font-size: 50px;
+            background-color:chocolate;
+            border-radius: 14px;
+            width: 10ch;
+            border: 3px solid;
+        }
+        #btn2{
+            font-size: 35px;
+            border-radius: 2ch;
+            background-color:lightcoral;
+            margin-left: 76%;
+            margin-top: 8%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather api</title>
+</head>
+<body>
+    <h1 id="h1">Weather Forecast</h1>
+    <form action="http://localhost:8000/home/" method="get">
+        <button type="submit" id="btn2">Go to Weather page</button>
+    </form>
+    <div id="maindiv">
+        <form action="http://localhost:8000/signup" method="get">
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <form action="http://localhost:8000/login" method="get">
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color:dodgerblue;
+      }
+      #h1 {
+        font-size: 70px;
+        color: whitesmoke;
+        font-weight: bolder;
+        font-style: italic;
+        margin-left: 5%;    
+      }
+      #btn{
+        font-size:30px ;
+        background-color:coral;
+        width:10ch;
+        border-radius: 2ch;
+
+      }
+      #form1{
+        font-size: 35px;
+        margin-left: 33%;
+        margin-top: 2%;
+      }
+      #back_btn {
+        margin-top: 20px;
+        margin-left: 10px;
+        font-size: 30px;
+        background-color: darkgray;
+        border: 2px solid;
+        border-radius: 10px;
+      }
+      #div1{
+        margin-top: 1%;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #name{
+        font-size: 30px;
+        background-color: rgb(169, 169, 169);
+        border:2px solid;
+        border-radius: 2px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      #logout{
+        font-size: 25px;
+        background-color:rgb(255, 0, 0,0.9);
+        border: 2px solid;
+        border-radius: 7px;
+      }
+      .weather_div{
+        font-size: 35px;
+        align-items: center;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+      }
+      #weather_box{
+        height: 300px;
+        width: 600px;
+        border: 3px solid;
+        border-radius: 4ch;
+        background-color:rgb(255, 235, 205,0.9);
+        margin-left: 30%;
+        margin-top: 6%;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+  </head>
+  <body>  
+    <div id="div1">
+      <form action="http://localhost:8000/home/" method="get">
+        <button type="submit" id="back_btn">Back</button>
+      </form>
+    <h1 id="h1">Get Weather</h1>
+
+    <div id="info">
+        <div id="name">
+          Welcome
+            <%=name%>
+        </div>
+        <form action="http://localhost:8000/home/getweather/logout" method="get">
+            <button  type="submit" id="logout">Logout</button>
+        </form>
+    </div>
+    </div>
+
+    <div id="weather_box">
+      <div class="weather_div">City - <%=city %></div>
+      <div class="weather_div">Temperature - <%=temp %></div>
+      <div class="weather_div">Humidity - <%=humidity%></div>
+      <div class="weather_div">Wind speed - <%=wind_speed%> </div>
+    </div>
+
+    <form action="http://localhost:8000/home/getweather/fetch_data" method="post" id="form1">
+      <label for="city_name">City : <input type="text" id="city_name" name="city_name" required  style="font-size: 35px;" size="10"></label>
+      <button type="submit" id="btn">Get Data</button>
+    </form>
+    
+
+    
+
+
+  </body>
+</html>

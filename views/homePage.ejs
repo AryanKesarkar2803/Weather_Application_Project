@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color:dodgerblue;
+      }
+      #h1 {
+        font-size: 70px;
+        color: whitesmoke;
+        font-weight: bolder;
+        font-style: italic;
+        margin-left: 5%;    
+      }
+      #btn {
+        display: flex;
+        justify-content: center;
+        margin-left: 75%;
+        margin-top: 5%;
+        font-size: 35px;
+        background-color: rgb(210, 105, 30, 0.9);
+        border-radius: 7px;
+        width: 18ch;
+      }
+      #back_btn {
+        margin-top: 20px;
+        margin-left: 10px;
+        font-size: 30px;
+        background-color: darkgray;
+        border: 2px solid;
+        border-radius: 10px;
+      }
+      #main_div{
+        margin-top: 1%;
+        /* background-color: aqua; */
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        /* margin-right: 20px; */
+      }
+      #info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #name{
+        font-size: 30px;
+        background-color: rgb(169, 169, 169);
+        border:2px solid;
+        border-radius: 2px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      #logout{
+        font-size: 25px;
+        background-color:rgb(255, 0, 0,0.9);
+        border: 2px solid;
+        border-radius: 7px;
+      }
+      #weather_box{
+        height: 300px;
+        width: 600px;
+        border: 3px solid;
+        border-radius: 4ch;
+        background-color:rgb(255, 235, 205,0.9);
+        margin-left: 30%;
+        margin-top: 6%;
+      }
+      .weather_div{
+        font-size: 35px;
+        align-items: center;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    
+    <div id="main_div">
+
+      <form action="http://localhost:8000/" method="get">
+        <button type="submit" id="back_btn">Back</button>
+      </form>
+    <h1 id="h1">Home Page</h1>
+
+    <div id="info">
+        <div id="name">
+          Welcome
+            <%=name%>
+        </div>
+        <form action="http://localhost:8000/home/getweather/logout" method="get">
+            <button  type="submit" id="logout">Logout</button>
+        </form>
+    </div>
+    </div>
+
+    <div id="weather_box">
+      <div class="weather_div">You are in <%=city %></div>
+      <div class="weather_div">Feels like <%=temp %> degrees</div>
+      <div class="weather_div">Humidity is <%=humidity%>%</div>
+      <div class="weather_div">Wind speed is <%=wind_speed%> km/h</div>
+    </div>
+
+    <form action="http://localhost:8000/home/getweather" method="get">
+      <button type="submit" id="btn">Get Weather</button>
+    </form>
+
+
+  </body>
+</html>
+
+
+
+
+
